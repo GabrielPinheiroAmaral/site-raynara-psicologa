@@ -1,0 +1,597 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #2D3E3A;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    color: #1A2C28;
+}
+
+/* ================= BOTÃO SUPERIOR DIREITO ================= */
+.btn-topo {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 1000;
+}
+
+.btn-wpp-top {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-wpp-top:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+}
+
+/* ================= BOTÃO FLUTUANTE ================= */
+.btn-flutuante {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+}
+
+.btn-wpp-float {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-wpp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.05);
+}
+
+/* ================= HEADER ================= */
+header {
+    background-color: #FFFFFF;
+    padding: 20px 0;
+    border-bottom: 1px solid #EAE6E0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* Força o container do header a ocupar toda a largura sem centralização */
+header .container {
+    max-width: none;          /* Remove o limite de largura */
+    margin: 0;               /* Remove o margin auto que centralizava */
+    padding-left: 24px;         /* Remove padding esquerdo */
+    padding-right: 24px;     /* Mantém um pequeno padding direito (opcional) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo - agora vai grudar na esquerda */
+.logo {
+    flex-shrink: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.logo h2 {
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.logo p {
+    font-size: 11px;
+    color: #8EA39B;
+    letter-spacing: 2px;
+    margin-top: 4px;
+    margin-left: 0;
+}
+
+/* Navegação centralizada */
+nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 32px;
+    white-space: nowrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2D3E3A;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #8EA39B;
+}
+
+/* Responsivo para telas menores que 900px */
+@media (max-width: 900px) {
+    header .container {
+        flex-direction: column;
+        gap: 16px;
+        padding-left: 24px;   /* Restaura o padding em telas pequenas */
+        padding-right: 24px;
+    }
+    nav {
+        position: static;
+        transform: none;
+        white-space: normal;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .logo {
+        align-self: flex-start;
+    }
+}
+@media (max-width: 900px) {
+    header .container {
+        flex-direction: column;
+        gap: 16px;
+        padding-left: 24px;   /* Restaura o padding nas telas pequenas para não grudar na borda */
+        padding-right: 24px;
+    }
+    nav {
+        position: static;
+        transform: none;
+        white-space: normal;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .logo {
+        align-self: flex-start; /* Mantém a logo à esquerda em coluna */
+    }
+}
+
+/* Responsivo 768px (mantenha o resto igual, mas remova as regras conflitantes de header) */
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 0;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+    .section-titulo h2 {
+        font-size: 28px;
+    }
+    .cards-ajuda {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .atendimento-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .reflexao-texto p {
+        font-size: 16px;
+    }
+    .cta-conteudo h2 {
+        font-size: 24px;
+    }
+    /* NÃO COLOQUE regras de header aqui, pois já foram tratadas no media 900px */
+}
+/* ================= HERO ================= */
+.hero {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F9FAF9 100%);
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 32px;
+    font-weight: 600;
+}
+
+/* FOTO QUADRADA ENTRE O H1 E O P */
+.hero-image {
+    margin: 32px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 512px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #5A726A;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+/* ================= BOTÕES PRINCIPAIS ================= */
+.btn-principal {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-principal:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+}
+
+.btn-grande {
+    padding: 16px 40px;
+    font-size: 18px;
+}
+
+/* ================= SEÇÕES ================= */
+.section {
+    padding: 80px 0;
+}
+
+.bg-suave {
+    background-color: #F8FAF9;
+}
+
+.section-titulo {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.section-titulo h2 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.linha {
+    width: 60px;
+    height: 2px;
+    background-color: #C2D4CD;
+    margin: 0 auto;
+}
+
+/* ================= TEXTO REFLEXÃO ================= */
+.reflexao-texto {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reflexao-texto p {
+    font-size: 18px;
+    color: #4A625A;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.reflexao-texto p:last-child {
+    margin-bottom: 0;
+}
+
+.reflexao-texto.pequeno p {
+    font-size: 16px;
+    font-style: italic;
+    color: #7A948C;
+}
+
+/* ================= LISTA ITENS ================= */
+.lista-itens {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.item-lista {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.check {
+    color: #8EA39B;
+    font-size: 20px;
+    font-weight: 600;
+    min-width: 28px;
+}
+
+.item-lista p {
+    font-size: 16px;
+    color: #2D3E3A;
+    line-height: 1.5;
+}
+
+/* ================= CARDS AJUDA ================= */
+.cards-ajuda {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.card-ajuda {
+    background: #FFFFFF;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #EAE6E0;
+    transition: all 0.3s;
+}
+
+.card-ajuda:hover {
+    border-color: #C2D4CD;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.card-ajuda h3 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.card-ajuda p {
+    font-size: 15px;
+    color: #5A726A;
+    line-height: 1.6;
+}
+
+/* ================= SOBRE GRID ================= */
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.pre-titulo {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #8EA39B;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.sobre-conteudo h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.sobre-conteudo p {
+    font-size: 16px;
+    color: #4A625A;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.sobre-conteudo .destaque {
+    font-weight: 500;
+    color: #2D3E3A;
+    border-left: 3px solid #C2D4CD;
+    padding-left: 20px;
+    margin-top: 24px;
+}
+
+.sobre-diferenciais h3 {
+    font-size: 22px;
+    margin-bottom: 24px;
+}
+
+.sobre-diferenciais ul {
+    list-style: none;
+}
+
+.sobre-diferenciais li {
+    font-size: 15px;
+    color: #4A625A;
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.sobre-diferenciais li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #8EA39B;
+}
+
+/* ================= ATENDIMENTO ================= */
+.atendimento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.atendimento-card {
+    background: #FFFFFF;
+    padding: 40px 32px;
+    border-radius: 20px;
+    border: 1px solid #EAE6E0;
+    text-align: center;
+}
+
+.atendimento-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.atendimento-card p {
+    font-size: 15px;
+    color: #5A726A;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+/* ================= CTA FINAL ================= */
+.cta-final {
+    background: linear-gradient(135deg, #F8FAF9 0%, #FFFFFF 100%);
+    text-align: center;
+}
+
+.cta-conteudo {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-conteudo h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+    font-weight: 500;
+}
+
+.obs {
+    font-size: 13px;
+    color: #8EA39B;
+    margin-top: 24px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background-color: #1A2C28;
+    color: #A8BFB6;
+    text-align: center;
+    padding: 48px 0;
+}
+
+footer p {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+//* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
+    
+    .section-titulo h2 {
+        font-size: 28px;
+    }
+    
+    .cards-ajuda {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .atendimento-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .reflexao-texto p {
+        font-size: 16px;
+    }
+    
+    .cta-conteudo h2 {
+        font-size: 24px;
+    }
+
+    /* NOVO: ajuste do header para telas pequenas */
+    header .container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    nav {
+        justify-self: auto;
+        margin-top: 8px;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Garante que a logo fique centralizada nessa versão */
+    .logo {
+        justify-self: auto;
+    }
+}
