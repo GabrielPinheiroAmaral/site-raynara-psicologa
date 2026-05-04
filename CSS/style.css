@@ -23,7 +23,6 @@ h1, h2, h3 {
     color: #1A2C28;
 }
 
-/* ================= BOTÃO SUPERIOR DIREITO ================= */
 .btn-topo {
     position: fixed;
     top: 24px;
@@ -52,7 +51,6 @@ h1, h2, h3 {
     transform: translateY(-2px);
 }
 
-/* ================= BOTÃO FLUTUANTE ================= */
 .btn-flutuante {
     position: fixed;
     bottom: 24px;
@@ -81,7 +79,6 @@ h1, h2, h3 {
     transform: scale(1.05);
 }
 
-/* ================= HEADER ================= */
 header {
     background-color: #FFFFFF;
     padding: 20px 0;
@@ -93,19 +90,18 @@ header {
     backdrop-filter: blur(10px);
 }
 
-/* Força o container do header a ocupar toda a largura sem centralização */
+
 header .container {
-    max-width: none;          /* Remove o limite de largura */
-    margin: 0;               /* Remove o margin auto que centralizava */
-    padding-left: 24px;         /* Remove padding esquerdo */
-    padding-right: 24px;     /* Mantém um pequeno padding direito (opcional) */
+    max-width: none;        
+    margin: 0;               
+    padding-left: 24px;         
+    padding-right: 24px;     
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
 }
 
-/* Logo - agora vai grudar na esquerda */
 .logo {
     flex-shrink: 0;
     margin-left: 0;
@@ -127,7 +123,7 @@ header .container {
     margin-left: 0;
 }
 
-/* Navegação centralizada */
+
 nav {
     position: absolute;
     left: 50%;
@@ -150,12 +146,11 @@ nav a:hover {
     color: #8EA39B;
 }
 
-/* Responsivo para telas menores que 900px */
 @media (max-width: 900px) {
     header .container {
         flex-direction: column;
         gap: 16px;
-        padding-left: 24px;   /* Restaura o padding em telas pequenas */
+        padding-left: 24px;   
         padding-right: 24px;
     }
     nav {
@@ -174,7 +169,7 @@ nav a:hover {
     header .container {
         flex-direction: column;
         gap: 16px;
-        padding-left: 24px;   /* Restaura o padding nas telas pequenas para não grudar na borda */
+        padding-left: 24px;   
         padding-right: 24px;
     }
     nav {
@@ -186,11 +181,10 @@ nav a:hover {
         gap: 20px;
     }
     .logo {
-        align-self: flex-start; /* Mantém a logo à esquerda em coluna */
+        align-self: flex-start; 
     }
 }
 
-/* Responsivo 768px (mantenha o resto igual, mas remova as regras conflitantes de header) */
 @media (max-width: 768px) {
     .hero {
         padding: 50px 0;
@@ -226,9 +220,7 @@ nav a:hover {
     .cta-conteudo h2 {
         font-size: 24px;
     }
-    /* NÃO COLOQUE regras de header aqui, pois já foram tratadas no media 900px */
 }
-/* ================= HERO ================= */
 .hero {
     padding: 80px 0;
     background: linear-gradient(135deg, #FFFFFF 0%, #F9FAF9 100%);
@@ -247,7 +239,6 @@ nav a:hover {
     font-weight: 600;
 }
 
-/* FOTO QUADRADA ENTRE O H1 E O P */
 .hero-image {
     margin: 32px auto;
     display: flex;
@@ -269,7 +260,6 @@ nav a:hover {
     line-height: 1.5;
 }
 
-/* ================= BOTÕES PRINCIPAIS ================= */
 .btn-principal {
     background-color: #25D366;
     color: white;
@@ -295,7 +285,6 @@ nav a:hover {
     font-size: 18px;
 }
 
-/* ================= SEÇÕES ================= */
 .section {
     padding: 80px 0;
 }
@@ -322,7 +311,6 @@ nav a:hover {
     margin: 0 auto;
 }
 
-/* ================= TEXTO REFLEXÃO ================= */
 .reflexao-texto {
     max-width: 800px;
     margin: 0 auto;
@@ -346,7 +334,6 @@ nav a:hover {
     color: #7A948C;
 }
 
-/* ================= LISTA ITENS ================= */
 .lista-itens {
     max-width: 700px;
     margin: 0 auto;
@@ -372,7 +359,6 @@ nav a:hover {
     line-height: 1.5;
 }
 
-/* ================= CARDS AJUDA ================= */
 .cards-ajuda {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -404,7 +390,7 @@ nav a:hover {
     line-height: 1.6;
 }
 
-/* ================= SOBRE GRID ================= */
+
 .sobre-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -465,7 +451,6 @@ nav a:hover {
     color: #8EA39B;
 }
 
-/* ================= ATENDIMENTO ================= */
 .atendimento-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -492,7 +477,6 @@ nav a:hover {
     line-height: 1.5;
 }
 
-/* ================= CTA FINAL ================= */
 .cta-final {
     background: linear-gradient(135deg, #F8FAF9 0%, #FFFFFF 100%);
     text-align: center;
@@ -515,7 +499,6 @@ nav a:hover {
     margin-top: 24px;
 }
 
-/* ================= FOOTER ================= */
 footer {
     background-color: #1A2C28;
     color: #A8BFB6;
@@ -573,7 +556,6 @@ footer p {
         font-size: 24px;
     }
 
-    /* NOVO: ajuste do header para telas pequenas */
     header .container {
         display: flex;
         flex-direction: column;
@@ -589,12 +571,10 @@ footer p {
         justify-content: center;
     }
 
-    /* Garante que a logo fique centralizada nessa versão */
     .logo {
         justify-self: auto;
     }
 }
-/* ================= FOTO NA SEÇÃO SOBRE ================= */
 .sobre-foto {
     display: flex;
     justify-content: center;
@@ -609,7 +589,6 @@ footer p {
     object-fit: cover;
 }
 
-/* Diferenciais agora abaixo da foto */
 .sobre-diferenciais {
     margin-top: 40px;
     text-align: center;
@@ -623,7 +602,6 @@ footer p {
     text-align: left;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
     .sobre-foto img {
         max-width: 280px;
