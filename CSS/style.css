@@ -51,34 +51,6 @@ h1, h2, h3 {
     transform: translateY(-2px);
 }
 
-.btn-flutuante {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 1000;
-}
-
-.btn-wpp-float {
-    background-color: #25D366;
-    color: white;
-    border: none;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    font-size: 28px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-wpp-float:hover {
-    background-color: #128C7E;
-    transform: scale(1.05);
-}
-
 header {
     background-color: #FFFFFF;
     padding: 20px 0;
