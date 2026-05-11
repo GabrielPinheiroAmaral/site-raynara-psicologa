@@ -145,7 +145,8 @@ nav a:hover {
         gap: 20px;
     }
     .logo {
-        align-self: flex-start; 
+        align-self: center;
+        text-align: center;
     }
 }
 
