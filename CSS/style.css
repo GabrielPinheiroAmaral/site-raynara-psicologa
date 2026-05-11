@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --cor-principal: #A66A53;   
+    --cor-secundaria: #E6A574;  
+    --cor-fundo: #FAF8F6;       
+    --cor-bege: #EFE8E1;       
+    --cor-texto: #2B3A37;
+    --cor-texto-suave: #6B7F7A;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #FFFFFF;
@@ -136,25 +145,6 @@ nav a:hover {
         gap: 20px;
     }
     .logo {
-        align-self: flex-start;
-    }
-}
-@media (max-width: 900px) {
-    header .container {
-        flex-direction: column;
-        gap: 16px;
-        padding-left: 24px;   
-        padding-right: 24px;
-    }
-    nav {
-        position: static;
-        transform: none;
-        white-space: normal;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-    .logo {
         align-self: flex-start; 
     }
 }
@@ -207,7 +197,7 @@ nav a:hover {
 }
 
 .hero-content h1 {
-    font-size: 42   px;
+    font-size: 42px;
     line-height: 1.2;
     margin-bottom: 32px;
     font-weight: 600;
@@ -243,6 +233,10 @@ nav a:hover {
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
+
+     text-decoration: none;
+
+     
     transition: all 0.3s;
     display: inline-flex;
     align-items: center;
@@ -350,6 +344,7 @@ nav a:hover {
 .card-ajuda:hover {
     border-color: #C2D4CD;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transform: translateY(-4px);
 }
 
 .card-ajuda h3 {
@@ -582,14 +577,7 @@ footer p {
         margin-top: 30px;
     }
 }
-:root {
-    --cor-principal: #A66A53;   
-    --cor-secundaria: #E6A574;  
-    --cor-fundo: #FAF8F6;       
-    --cor-bege: #EFE8E1;       
-    --cor-texto: #2B3A37;
-    --cor-texto-suave: #6B7F7A;
-}
+
 nav a {
     display: inline-block;
     padding: 6px 16px;
@@ -597,10 +585,36 @@ nav a {
     background-color: rgb(250, 248, 247);
     color: var(--cor-texto);
     font-size: 13px;
-    transition: all 0.3s;
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 nav a:hover {
     background-color: var(--cor-principal);
     color: #fff;
+    transform: translateY(-2px);
+}
+.animar {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.animar.visivel {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+@media (max-width: 768px) {
+    .btn-topo {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+    }
 }
