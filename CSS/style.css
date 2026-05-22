@@ -33,11 +33,30 @@ h1, h2, h3 {
     letter-spacing: 0.5px;
 }
 
-.btn-topo {
-    position: fixed;
-    top: 24px;
-    right: 24px;
-    z-index: 1000;
+.btn-wpp-top {
+    background-color: #25D366;
+    color: white;
+    border: none;
+
+    height: 42px;
+    padding: 0 22px;
+
+    border-radius: 40px;
+
+    font-weight: 500;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+    transition: all 0.3s;
 }
 
 .btn-wpp-top {
@@ -63,7 +82,7 @@ h1, h2, h3 {
 
 header {
     background-color: var(--cor-bege);
-    padding: 20px 0;
+    height: 95px;
     border-bottom: 1px solid #EAE6E0;
     position: sticky;
     top: 0;
@@ -73,14 +92,15 @@ header {
 
 
 header .container {
-    max-width: none;        
-    margin: 0;               
-    padding-left: 24px;         
-    padding-right: 24px;     
+    max-width: none;
+    margin: 0;
+    padding: 0 24px;
+
+    height: 100%;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    position: relative;
+    justify-content: space-between;
 }
 
 .logo {
@@ -91,28 +111,49 @@ header .container {
     user-select: none;
 }
 
-.logo h2 {
-    font-size: 22px;
-    letter-spacing: 1px;
-    margin-left: 0;
-    padding-left: 0;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
 }
 
-.logo p {
-    font-size: 11px;
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-texto h2 {
+    font-size: 24px;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.logo-texto p {
+    font-size: 12px;
     color: #8EA39B;
-    letter-spacing: 2px;
-    margin-top: 4px;
-    margin-left: 0;
+    letter-spacing: 4px;
+    margin-top: 8px;
 }
 
+.logo-divisor {
+    width: 1px;
+    height: 70px;
+    background-color: #C2D4CD;
+}
+
+.logo-marca img {
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
 
 nav {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
-    gap: 32px;
+    align-items: center;
+    gap: 24px;
     white-space: nowrap;
 }
 
@@ -185,6 +226,27 @@ nav a:hover {
     .cta-conteudo h2 {
         font-size: 24px;
     }
+
+    .logo {
+    gap: 16px;
+}
+
+.logo-texto h2 {
+    font-size: 28px;
+}
+
+.logo-texto p {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.logo-divisor {
+    height: 40px;
+}
+
+.logo-marca img {
+    width: 220px;
+}
 }
 .hero {
     padding: 80px 0;
@@ -523,24 +585,65 @@ footer p {
         font-size: 24px;
     }
 
-    header .container {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        gap: 16px;
-    }
+header {
+    height: auto;
+    padding: 20px 0;
+}
 
-    nav {
-        justify-self: auto;
-        margin-top: 8px;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+header .container {
+    display: flex;
+    flex-direction: column;
 
-    .logo {
-        justify-self: auto;
-    }
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.logo {
+    flex-direction: column;
+    gap: 12px;
+
+    text-align: center;
+}
+
+.logo-divisor {
+    display: none;
+}
+
+.logo-texto h2 {
+    font-size: 32px;
+}
+
+.logo-texto p {
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.logo-marca img {
+    height: 90px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+nav a {
+    font-size: 13px;
+    padding: 8px 14px;
+}
+
+.btn-wpp-top {
+    width: 100%;
+    max-width: 260px;
+    height: 46px;
+}
 }
 .sobre-foto {
     display: flex;
