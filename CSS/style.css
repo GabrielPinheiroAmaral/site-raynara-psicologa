@@ -59,22 +59,6 @@ h1, h2, h3 {
     transition: all 0.3s;
 }
 
-.btn-wpp-top {
-    background-color: #25D366;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 40px;
-    font-weight: 500;
-    font-size: 14px;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
 .btn-wpp-top:hover {
     background-color: #128C7E;
     transform: translateY(-2px);
@@ -227,26 +211,6 @@ nav a:hover {
         font-size: 24px;
     }
 
-    .logo {
-    gap: 16px;
-}
-
-.logo-texto h2 {
-    font-size: 26px;
-}
-
-.logo-texto p {
-    font-size: 10px;
-    letter-spacing: 2px;
-}
-
-.logo-divisor {
-    height: 40px;
-}
-
-.logo-marca img {
-    width: 220px;
-}
 }
 .hero {
     padding: 80px 0;
@@ -640,9 +604,7 @@ nav a {
 }
 
 .btn-wpp-top {
-    width: 100%;
-    max-width: 260px;
-    height: 46px;
+    display: none;
 }
 }
 .sobre-foto {
@@ -714,11 +676,4 @@ nav a:hover {
 .animar.visivel {
     opacity: 1;
     transform: translateY(0) scale(1);
-}
-@media (max-width: 768px) {
-    .btn-topo {
-        top: auto;
-        bottom: 20px;
-        right: 20px;
-    }
 }
