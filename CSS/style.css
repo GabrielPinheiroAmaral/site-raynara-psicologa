@@ -232,7 +232,7 @@ nav a:hover {
 }
 
 .logo-texto h2 {
-    font-size: 28px;
+    font-size: 26px;
 }
 
 .logo-texto p {
@@ -601,14 +601,14 @@ header .container {
 }
 
 .logo {
-    flex-direction: column;
-    gap: 12px;
-
-    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
 }
-
 .logo-divisor {
-    display: none;
+    display: block;
+    height: 50px;
 }
 
 .logo-texto h2 {
@@ -621,7 +621,7 @@ header .container {
 }
 
 .logo-marca img {
-    height: 90px;
+    height: 65px;
     width: auto;
 }
 
